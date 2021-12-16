@@ -11,15 +11,16 @@
 -You can use endpoints from postman.\
 -Project uses 2 different model.
 
-## Employee endpoint
+## Employees endpoint
 `-Get request(getAll): ` http://localhost:8082/api/employees/ \
 `-Get request(getById): ` http://localhost:8082/api/employees/{id} \
 `-Post request: ` http://localhost:8082/api/employees \
 `-Put request: ` http://localhost:8082/api/employees/{id} \
 `Note------` To make put and post request you must provide `departmentId` instead of `department`.\
-`Example for post: ` \     
+`Example for put and post(you don't need to provide id in post request): ` \     
 
 {\
+        "id":10, \
         "name": "Furkan",\
         "surname": "Ören",\
         "email": "frknorn67@gmail.com",\
@@ -27,4 +28,15 @@
         "age": 24\
 }
 
+## Departments endpoint
+`-Get request(getAll): ` http://localhost:8082/api/departments/ \
+`-Get request(getById): ` http://localhost:8082/api/employees/{id} \
+`-Post request: ` http://localhost:8082/api/employees \
+`-Put request: ` http://localhost:8082/api/employees/{id} \
+`Example for put and post(you don't need to provide id in post request): ` \     
+{\
+        "id":10, \
+        "name": "Arge",\
+        "manager": "Furkan \
+}
 
