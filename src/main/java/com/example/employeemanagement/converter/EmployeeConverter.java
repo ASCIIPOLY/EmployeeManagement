@@ -22,7 +22,7 @@ public class EmployeeConverter {
     public Employee dtoToEntityForCreate(EmployeeDTO dto) {
         ModelMapper modelMapper = new ModelMapper();
         Employee employee = modelMapper.map(dto, Employee.class);
-        employee.setDepartment(getDepartmentById(dto.getDepartmentId()));
+        setDepartmentById(dto.getDepartmentId(), employee);
         return  employee ;
     }
 
@@ -31,13 +31,16 @@ public class EmployeeConverter {
         employee.setName(dto.getName());
         employee.setSurname(dto.getSurname());
         employee.setEmail(dto.getEmail());
-        employee.setDepartment(getDepartmentById(dto.getDepartmentId()));
         employee.setAge(dto.getAge());
+        setDepartmentById(dto.getDepartmentId(), employee);
         return employee;
     }
 
-    private Department getDepartmentById(Long id){
-        if (id != null) {return departmentService.getById(id);}
-        return null ;
+    private void setDepartmentById(Long id, Employee employee){
+        if (id != null) {
+            employee.setDepartment(departmentService.getById(id));
+        } else {
+            employee.setDepartment(null) ;
+        }
     }
 }
