@@ -13,12 +13,11 @@
 
 ## Employee endpoint
 `-Get request(getAll): ` http://localhost:8082/api/employees/ \
-`-Get request(getById): ` http://localhost:8082/api/employees/{id}\
-`-Post request: ` http://localhost:8082/api/employees\
-`-Put request: ` http://localhost:8082/api/employees/{id}\
-
+`-Get request(getById): ` http://localhost:8082/api/employees/{id} \
+`-Post request: ` http://localhost:8082/api/employees \
+`-Put request: ` http://localhost:8082/api/employees/{id} \
 `Note------` To make put and post request you must provide `departmentId` instead of `department`.\
-`Example for post: `\     
+`Example for post: ` \     
 
 {\
         "name": "Furkan",\
