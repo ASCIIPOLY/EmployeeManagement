@@ -1,6 +1,7 @@
 ## Prerequisite for running project
 -JDK must be işnstalled.\
--PostgreSQL must be installed than u should create a database named `deneme6`.
+-PostgreSQL must be installed than u should create a database named `deneme6`. \
+-username and password for database is `postgres`. You can change it from `src.main.resources.application.properties` 
 
 ## To run the project 
 -First you can run project via an IDE.\
