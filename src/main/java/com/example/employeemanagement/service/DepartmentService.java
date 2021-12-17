@@ -12,5 +12,5 @@ public interface DepartmentService {
 
     Department update(Long id, Department department);
 
-    void delete(Long id);
+    String delete(Long id);
 }

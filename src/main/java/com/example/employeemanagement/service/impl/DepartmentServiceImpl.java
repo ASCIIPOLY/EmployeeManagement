@@ -36,9 +36,10 @@ public class DepartmentServiceImpl implements DepartmentService {
         }
     }
 
-    public void delete(Long id) {
+    public String delete(Long id) {
         departmentRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Department not exist with id: " + id));
         departmentRepository.deleteById(id);
+        return "Department Deleted succesfully!!";
     }
 }

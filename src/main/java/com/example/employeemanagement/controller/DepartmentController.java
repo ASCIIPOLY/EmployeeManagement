@@ -23,8 +23,8 @@ public class DepartmentController extends AbstractController {
         return new ResponseEntity<>(departmentService.getAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Department> getOne(@PathVariable("id") Long id) {
+    @RequestMapping(value ="/", method = RequestMethod.GET)
+    public ResponseEntity<Department> getOne(@RequestParam(name = "id") Long id) {
         return new ResponseEntity<>(departmentService.getById(id), HttpStatus.OK);
     }
 
@@ -33,13 +33,13 @@ public class DepartmentController extends AbstractController {
         return new ResponseEntity<>(departmentService.add(department), HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable("id") Long id) {
-        departmentService.delete(id);
+    @RequestMapping(value ="/", method = RequestMethod.DELETE)
+    public ResponseEntity<String> delete(@RequestParam Long id) {
+        return new ResponseEntity<>(departmentService.delete(id), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Department> update(@PathVariable("id") Long id, @RequestBody Department department) {
+    @RequestMapping(value ="/", method = RequestMethod.PUT)
+    public ResponseEntity<Department> update(@RequestParam Long id, @RequestBody Department department) {
         return new ResponseEntity<>(departmentService.update(id, department), HttpStatus.OK);
     }
 }

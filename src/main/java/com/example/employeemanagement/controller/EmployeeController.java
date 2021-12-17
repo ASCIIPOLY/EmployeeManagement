@@ -40,8 +40,8 @@ public class EmployeeController extends AbstractController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void delete(@PathVariable("id") Long id) {
-        employeeService.delete(id);
+    public ResponseEntity<String> delete(@PathVariable("id") Long id) {
+        return new ResponseEntity<>(employeeService.delete(id), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)

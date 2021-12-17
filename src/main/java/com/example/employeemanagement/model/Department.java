@@ -23,6 +23,13 @@ public class Department {
     @OneToMany(mappedBy ="department")
     private List<Employee> employees;
 
+    @PreRemove
+    private void preRemove() {
+        for (Employee employee : employees) {
+            employee.setDepartment(null);
+        }
+    }
+
     public Department(){
 
     }
